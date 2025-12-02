@@ -1,28 +1,36 @@
-🚀 Projeto Spring Boot + MySQL com Docker
+# Projeto Java Spring Boot + Docker + MySQL
 
-Este projeto consiste em uma aplicação Java Spring Boot e um banco de dados MySQL executado dentro de um container Docker.
-A pasta docker/ contém os arquivos necessários para subir o banco de dados sem necessidade de instalação local.
+Este projeto consiste em uma aplicação Java Spring Boot integrada com um banco MySQL executado em container Docker.  
+A pasta `docker/` contém os arquivos necessários para subir o banco de dados.
 
-📁 Estrutura do Projeto
+---
+
+## 📁 Estrutura do Projeto
 /.idea
 /demo       -> Código do projeto Java Spring Boot
 /docker     -> Arquivos Docker (docker-compose.yml, scripts, etc)
 
-🔧 Pré-requisitos
+---
 
-Antes de iniciar, certifique-se de que possui instalado:
+## Requisitos
 
-✔️ Java 17+ (ou versão usada no projeto)
-✔️ Docker e Docker Compose
-✔️ (Opcional) IDE como IntelliJ IDEA ou VSCode
+- Java 17 ou superior
+- Docker
+- Docker Compose
+- IDE (IntelliJ, Eclipse, VSCode etc)
 
-🐳 Subindo o Banco com Docker
+---
 
-Dentro da pasta docker execute:
+# 🐳 Subindo o banco com Docker
 
+1. Abra um terminal
+2. Vá até a pasta `docker`
+3. Execute:
+
+```bash
 cd docker
 docker compose up -d --build
-
+```
 
 Isso irá:
 
@@ -36,8 +44,8 @@ Liberar a porta configurada (ex: 3306)
 
 📦 Configurações de Conexão no Spring Boot
 
-No arquivo application.properties (ou application.yml), configure:
-
+No arquivo application.properties, configure:
+```bash
 spring.datasource.url=jdbc:mysql://localhost:3306/NOME_DO_BANCO
 spring.datasource.username=root
 spring.datasource.password=1234
@@ -45,9 +53,7 @@ spring.datasource.password=1234
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
-
-
-Substitua NOME_DO_BANCO, usuário e senha conforme definidos no seu docker-compose.yml.
+```
 
 ▶️ Executando o Projeto Spring Boot
 1️⃣ Navegue até o diretório do projeto
@@ -57,17 +63,15 @@ cd demo
 
 Se estiver utilizando Gradle:
 
+```bash
 ./gradlew bootRun
-
+```
 
 Ou no Windows:
 
+```bash
 gradlew bootRun
-
-
-Se estiver usando Maven:
-
-mvn spring-boot:run
+```
 
 🔎 Verificando o Status
 ➤ Ver containers ativos
