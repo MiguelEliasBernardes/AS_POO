@@ -1,0 +1,10 @@
+services:
+
+  db:
+    image: bitnami/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: AS_POO
+    ports:
+      - "3306:3306"
